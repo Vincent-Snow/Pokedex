@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		885F408921C8748900770E29 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F408821C8748900770E29 /* PokemonViewController.swift */; };
 		88877D2E21C45DC400A18305 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88877D2D21C45DC400A18305 /* NetworkController.swift */; };
 		88B86FAD216A754800BC32DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86FAC216A754800BC32DE /* AppDelegate.swift */; };
 		88B86FB2216A754800BC32DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B86FB0216A754800BC32DE /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		885F408821C8748900770E29 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		88877D2D21C45DC400A18305 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		88B86FA9216A754800BC32DE /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B86FAC216A754800BC32DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				88B86FC0216AA8F000BC32DE /* PokemonTableViewController.swift */,
 				88B86FC2216AA93700BC32DE /* Pokemon.swift */,
 				88B86FC4216AA94300BC32DE /* PokemonController.swift */,
+				885F408821C8748900770E29 /* PokemonViewController.swift */,
 				88B86FAC216A754800BC32DE /* AppDelegate.swift */,
 				88B86FB0216A754800BC32DE /* Main.storyboard */,
 				88B86FB3216A754900BC32DE /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			files = (
 				88877D2E21C45DC400A18305 /* NetworkController.swift in Sources */,
 				88B86FC1216AA8F000BC32DE /* PokemonTableViewController.swift in Sources */,
+				885F408921C8748900770E29 /* PokemonViewController.swift in Sources */,
 				88B86FAD216A754800BC32DE /* AppDelegate.swift in Sources */,
 				88B86FC3216AA93700BC32DE /* Pokemon.swift in Sources */,
 				88B86FC5216AA94300BC32DE /* PokemonController.swift in Sources */,

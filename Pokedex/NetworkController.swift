@@ -26,8 +26,8 @@ class NetworkController {
     
     static func dataAtURL(url: URL, completion:@escaping ( _ resultData: Data?) -> Void) {
         let session = URLSession.shared
-        let dataTask =  session.dataTask(with: url) { (data, _, error) in
-            
+        let dataTask =  session.dataTask(with: url) { (data, response, error) in
+             
             guard let data = data else {
                 print(error?.localizedDescription as Any)
                 completion(nil)

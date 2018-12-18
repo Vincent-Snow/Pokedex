@@ -11,18 +11,29 @@ import UIKit
 
 class Pokemon {
     
-    let name: String
-    let hp: Int
-    let type: [String]
-    let icon: UIImage
-    let evolutions: [Pokemon]?
+    var name: String = ""
+    var type: [String] = []
+    var icon: UIImage = UIImage(named: "")!
+    //    let evolutions: [Pokemon]? = []
     
-    init(name: String, hp: Int, type: [String], icon: UIImage, evolutions: [Pokemon]?) {
+//    init(icon: UIImage) {
+//
+//        self.icon = icon
+//
+//    }
+
+    init?(json: [String : AnyObject]) {
+        guard let name = json["name"] as? String, let type = json["name"] as? [String] else { return nil }
+        
+        let icon = json["front_default"]
         self.name = name
-        self.hp = hp
         self.type = type
-        self.icon = icon
-        self.evolutions = evolutions
+        
+        if let pIcon = icon as? UIImage {
+            self.icon = pIcon
+        }
+        
+
     }
     
 }

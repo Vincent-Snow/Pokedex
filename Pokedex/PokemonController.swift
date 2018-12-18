@@ -14,17 +14,19 @@ class PokemonController {
     
     
     
+    
+    
     static func getPokemon(pokemonName: String, completion:@escaping (_ result: Pokemon?) -> Void) {
         
         let url = NetworkController.getPokemon(pokemonName: pokemonName)
         
         NetworkController.dataAtURL(url: url) { (resultData) in
         
-            guard let resultData = resultData else {
-                print("no data returned")
-                completion(nil)
-                return
-            }
+//            guard let resultData = resultData else {
+//                print("no data returned")
+//                completion(nil)
+//                return
+//            }
             
             
         }
