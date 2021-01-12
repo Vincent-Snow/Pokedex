@@ -11,29 +11,45 @@ import Foundation
 class NetworkController {
     
     private static let APIKey = ""
-    static let baseURL = "https://pokeapi.co/api/v2/"
+    static let baseURL = "https://pokeapi.co/api/v2/pokemon"
+    static let allPokemonURL = "?limit=1000"
     
-    static func getPokemon(pokemonName: String) -> URL {
-        let escapedPokemon = pokemonName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
-        guard let unwrappedPokemon = escapedPokemon else {
-            print("pokemon name not valid")
-            return URL(string: baseURL)!
-        }
-        return URL(string: baseURL + "pokemon/" + unwrappedPokemon + "/")!
+//    static func getAllPokemonByURL(pokemonName: String, completion: @escaping (_ results: [Pokemon]?) -> Void){
+////        let escapedPokemon = pokemonName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+//
+//        let urlString = baseURL + pokemonName
+//        guard let url = URL(string: urlString) else {
+//            return
+//        }
+//
+//        dataAtURL(url: url) { (json) in
+//            guard let j = json,
+//                  let allPokemon = j["results"] as? [[String : AnyObject]] else { return }
+//        }
+//
+//    }
+
+    static func getOnePokemonByURL(pokemonNumber: String) -> NSURL {
+        let urlString = baseURL + "/" + pokemonNumber
+        return NSURL(string: urlString)!
     }
     
     
-    static func dataAtURL(url: URL, completion:@escaping ( _ resultData: Data?) -> Void) {
+    static func dataAtURL(url: NSURL, completion:@escaping (_ resultData: NSData?) -> Void) {
         let session = URLSession.shared
-        let dataTask =  session.dataTask(with: url) { (data, response, error) in
-             
-            guard let data = data else {
-                print(error?.localizedDescription as Any)
-                completion(nil)
-                return
-            }
-            completion(data)
+        let dataTask =  session.dataTask(with: url as URL) { (data, response, error) in
+            if let e = error {
+                print("Error downloading data \(e)")
+            } else if let d = data {
+                completion(d as NSData?)
+//                do {
+//                    if let json = try JSONSerialization.jsonObject(with: d, options: []) as? [String : AnyObject] {
+//                        completion(json)
+//                    }
+//                } catch let jsonError {
+//                    print("Error decoding JSON \(jsonError)")
+//                }
+             }
         }
         dataTask.resume()
     }
