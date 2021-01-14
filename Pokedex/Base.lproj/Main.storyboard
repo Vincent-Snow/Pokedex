@@ -48,12 +48,12 @@
                     <connections>
                         <outlet property="image" destination="7iB-PI-0Em" id="U15-HV-eRO"/>
                         <outlet property="resultsLabel" destination="KRi-xm-npp" id="2zk-O4-yEd"/>
-                        <outlet property="searchTextField" destination="yD9-MG-Nem" id="b2c-3K-76e"/>
+                        <outlet property="searchTextField" destination="qPP-Y3-1Rd" id="pks-Af-GDJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyd-fS-uMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39.375" y="0.0"/>
+            <point key="canvasLocation" x="58" y="-6"/>
         </scene>
     </scenes>
 </document>

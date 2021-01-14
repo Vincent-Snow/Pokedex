@@ -10,9 +10,11 @@ import UIKit
 
 class PokemonViewController: UIViewController {
 
-    @IBOutlet weak var searchTextField: UIButton!
+
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
+    var pokemon: Pokemon?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,14 @@ class PokemonViewController: UIViewController {
     }
     
     @IBAction func searchPressed(_ sender: Any) {
+        if let pokeSearch = searchTextField.text {
+            PokemonController.getOnePokemon(pokemonNumber: pokeSearch) { (pokemon) in
+                guard let pokemon = pokemon else { return }
+                DispatchQueue.main.async {
+                    self.resultsLabel.text = "\(pokemon.name.localizedCapitalized)"
+                }
+            }
+         }
     }
 
     /*

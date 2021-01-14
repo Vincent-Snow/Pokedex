@@ -13,6 +13,7 @@ class NetworkController {
     private static let APIKey = ""
     static let baseURL = "https://pokeapi.co/api/v2/pokemon"
     static let allPokemonURL = "?limit=1000"
+    static let original151URL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
     
 //    static func getAllPokemonByURL(pokemonName: String, completion: @escaping (_ results: [Pokemon]?) -> Void){
 ////        let escapedPokemon = pokemonName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -35,7 +36,7 @@ class NetworkController {
     }
     
     
-    static func dataAtURL(url: NSURL, completion:@escaping (_ resultData: NSData?) -> Void) {
+    static func dataAtURL(_ url: NSURL, completion:@escaping (_ resultData: NSData?) -> Void) {
         let session = URLSession.shared
         let dataTask =  session.dataTask(with: url as URL) { (data, response, error) in
             if let e = error {
