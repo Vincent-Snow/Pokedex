@@ -43,13 +43,6 @@ class NetworkController {
                 print("Error downloading data \(e)")
             } else if let d = data {
                 completion(d as NSData?)
-//                do {
-//                    if let json = try JSONSerialization.jsonObject(with: d, options: []) as? [String : AnyObject] {
-//                        completion(json)
-//                    }
-//                } catch let jsonError {
-//                    print("Error decoding JSON \(jsonError)")
-//                }
              }
         }
         dataTask.resume()
